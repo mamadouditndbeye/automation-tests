@@ -12,11 +12,14 @@ driver.get("https://duckduckgo.com")
 time.sleep(2)
 
 # Trouve la barre de recherche et tape du texte
-search_box = driver.find_element(By.NAME, "q")
+search_box = driver.find_element(By.ID,"searchbox_input")
 search_box.send_keys("automatisation de tests QA")
 
 # Attend 3 secondes pour voir le résultat
 time.sleep(3)
+
+#On lit le titre de la page
+print("Titre de la page : ", driver.title)
 
 # Ferme le navigateur
 driver.quit()
